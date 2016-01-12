@@ -9,11 +9,23 @@
 
 session_start();
 
-function index()
+function index( $config, $parameters )
 {
+    loadModel( 'models/Students' );       
+
+    $students = getAllStudents( $config );
+    
+    if( $students['status'] ) {
+        if( isset( $_SESSION['uname'] ) ) {
+            $students['loggedIn'] = true;
+        }
+        
+        return $students;
+    }
+
     return [
-        'status' => true,
-        'message' => 'Index action completed for controller Student.',
-        'data' => [],
+        'status'  => false,
+        'message' => 'An error occured while trying to retrieve Students records.',
+        'code'    => 500,
     ];
 }

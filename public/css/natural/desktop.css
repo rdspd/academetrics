@@ -94,9 +94,47 @@ div.container div.content {
     border: solid 1px #245701;
 }
 
-div.container h1 {
+div.container div.content h1 {
     margin: 10px 20px;
     border-bottom: solid 1px #DCDCDC;
+}
+
+div.container div.content p {
+    margin: 10px 20px;
+}
+
+div.container div.content table {
+    margin: 10px 20px;    
+    border-spacing: 1px;
+    border-collapse: separate;
+    border: solid 1px #245701;
+    width: 96%;
+}
+
+div.container div.content table thead th {
+    background: #245701;
+    color: #fff;
+    padding: 5px 10px;   
+}
+
+div.container div.content table tbody tr td {
+    padding: 5px 10px;    
+}
+
+div.container div.content table tbody tr:hover {
+    background: #f8f8f8;
+}
+
+div.container div.content table tbody tr td a,
+div.container div.content table tbody tr td a:visited {
+    text-decoration: none;
+    color: #245701;
+    font: 15px bold 'Open Sans Bold';
+    font-weight: bold;
+}
+
+div.container div.content table tbody tr td a:hover {
+    color: #d7ed11;
 }
 
 /**

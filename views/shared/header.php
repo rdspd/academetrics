@@ -7,7 +7,7 @@
         <a href='/students'>students</a>
     </li>
     <li>
-        <a href='/'>subjects</a>
+        <a href='/subjects'>subjects</a>
     </li>
     <li class='right-aligned'>
     <?php if( isset( $_SESSION['uname'] ) ) : ?>

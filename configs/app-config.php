@@ -20,6 +20,7 @@ return [
                 'home',
                 'login',
                 'students',
+                'subjects',
             ],
             'default' => [
                 'controller' => 'home',

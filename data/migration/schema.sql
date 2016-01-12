@@ -28,7 +28,7 @@ DROP TABLE IF EXISTS `Users`;
 CREATE TABLE IF NOT EXISTS `Users`(
     `ID` INT (11) UNSIGNED AUTO_INCREMENT,
     `UserName` VARCHAR (30) NOT NULL,
-    `Password` VARCHAR (30) NOT NULL,
+    `Password` VARCHAR (300) NOT NULL,
 
     `UserRoleID` TINYINT (1) NOT NULL,
 
@@ -41,11 +41,11 @@ CREATE TABLE IF NOT EXISTS `Users`(
 ) ENGINE = InnoDB CHARSET = utf8;
 
 -- 
--- UserDetails
+-- StudentDetails
 --
-SELECT 'Table Schema' AS 'UserDetails';
-DROP TABLE IF EXISTS `UserDetails`;
-CREATE TABLE IF NOT EXISTS `UserDetails`(
+SELECT 'Table Schema' AS 'StudentDetails';
+DROP TABLE IF EXISTS `StudentDetails`;
+CREATE TABLE IF NOT EXISTS `StudentDetails`(
     `UserID` INT (11) UNSIGNED NOT NULL,
 
     `FirstName` VARCHAR (30) NOT NULL,
@@ -53,15 +53,13 @@ CREATE TABLE IF NOT EXISTS `UserDetails`(
     `LastName` VARCHAR (30) NULL,
     `Email` VARCHAR (50) NULL,
     `Address` VARCHAR (200) NULL,
-
-    `UserRoleID` INT (11) UNSIGNED NOT NULL,
+    `StudentNumber` VARCHAR (100) NULL,
 
     `DateAdded` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `DateModified` TIMESTAMP NULL,
 
     PRIMARY KEY ( `UserID` ),
-    UNIQUE KEY ( `Email` ),
-    FOREIGN KEY ( `UserID` ) REFERENCES `Users` ( `ID` ) ON UPDATE NO ACTION ON DELETE NO ACTION
+    UNIQUE KEY ( `Email` )
 ) ENGINE = InnoDB CHARSET = utf8;
 
 --
