@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url( 'fonts/Open Sans/Regular/OpenSans-Regular-webfont.eot' );
+    src: url( 'fonts/Open Sans/Regular/OpenSans-Regular-webfont.eot?#iefix' ) format('embedded-opentype'),
+         url( 'fonts/Open Sans/Regular/OpenSans-Regular-webfont.woff' ) format('woff'),
+         url( 'fonts/Open Sans/Regular/OpenSans-Regular-webfont.ttf' ) format('truetype'),
+         url( 'fonts/Open Sans/Regular/OpenSans-Regular-webfont.svg#open_sansregular' ) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url( 'fonts/Open Sans/Bold/OpenSans-Bold-webfont.eot' );
+    src: url( 'fonts/Open Sans/Bold/OpenSans-Bold-webfont.eot?#iefix' ) format('embedded-opentype'),
+         url( 'fonts/Open Sans/Bold/OpenSans-Bold-webfont.woff' ) format('woff'),
+         url( 'fonts/Open Sans/Bold/OpenSans-Bold-webfont.ttf' ) format('truetype'),
+         url( 'fonts/Open Sans/Bold/OpenSans-Bold-webfont.svg#open_sansbold' ) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    font: 14px 'Open Sans';
+}
+
+/**
+ *  Main Container
+ **/
+div.container {
+    overflow: hidden;
+}
+
+/**
+ *  Main Container
+ **/
+div.container > div.header {
+    overflow: hidden;
+    height: 50px;
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #099f18;
+}
+
+/**
+ *  Header Navigation
+ **/
+div.container ul.navigation {
+    background: #245701;
+    list-style: outside none none;
+    margin: -32px auto 0;
+    padding: 0;
+    width: 90%;
+    border: solid 1px #245701;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+}
+
+div.container ul.navigation li {
+    float: left;
+    margin: 0;
+    padding: 5px 10px;
+    color: #fff;    
+}
+
+div.container ul.navigation li.bordered {
+    border-right: solid 1px #4e9371;
+}
+
+div.container ul.navigation li.right-aligned {
+    float: right;
+}
+
+div.container ul.navigation li a,
+div.container ul.navigation li a:visited {
+    font: 14px 'Open Sans Bold';    
+    color: #fff;
+    text-decoration: none;
+}
+
+div.container ul.navigation li a:hover {
+    color: #d7ed11;
+}
+
+div.container div.content {
+    width: 90%;
+    margin: 0 auto;
+    border: solid 1px #245701;
+}
+
+div.container h1 {
+    margin: 10px 20px;
+    border-bottom: solid 1px #DCDCDC;
+}
+
+/**
+ *  Login
+ **/
+div.container div.content div.login-box {
+    margin: 50px auto;
+    width: 25%;
+}
+
+div.container div.content div.login-box div.header {
+    background: #245701;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;    
+    padding: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+div.container div.content div.login-box div.form-box {
+    border: solid 1px #245701;
+    border-top: none;
+}
+
+div.container div.content div.login-box div.form-box div.row {
+    overflow: hidden;
+    margin: 0 10px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+div.container div.content div.login-box div.form-box div.row label {
+    float: left;
+    width: 25%;
+}
+
+div.container div.content div.login-box div.form-box div.row input[type='text'],
+div.container div.content div.login-box div.form-box div.row input[type='password'] {
+    float: left;
+    margin: 0 5px;
+    width: 69%;
+}
+
+div.container div.content div.login-box div.form-box div.row input[type='submit'] {
+    color: #fff;
+    background: #245701;
+    padding: 2px 5px;
+    border: solid 1px #0b8053;
+}
+
+div.container div.content div.login-box div.form-box div.row input[type='submit']:hover {
+    cursor: pointer;
+    background: #0b8053;
+}
