@@ -11,13 +11,17 @@ session_start();
 
 function index( $config, $parameters )
 {
-    loadModel( 'models/Students' );       
+    loadModel( 'models/Students' );
 
     $students = getAllStudents( $config );
     
     if( $students['status'] ) {
         if( isset( $_SESSION['uname'] ) ) {
             $students['loggedIn'] = true;
+        }
+
+        if( isset( $_SESSION['urole'] ) ) {
+            $students['role'] = $_SESSION['urole'];   
         }
         
         return $students;
@@ -26,6 +30,33 @@ function index( $config, $parameters )
     return [
         'status'  => false,
         'message' => 'An error occured while trying to retrieve Students records.',
+        'code'    => 500,
+    ];
+}
+
+function view( $config, $parameters )
+{
+    loadModel( 'models/Students' );
+
+    $studentNumber = isset( $parameters['student-number'] ) ? $parameters['student-number'] : 0;
+
+    $student = getStudentByStudentNumber( $config, $studentNumber );
+    
+    if( $student['status'] ) {
+        if( isset( $_SESSION['uname'] ) ) {
+            $student['loggedIn'] = true;
+        }
+
+        if( isset( $_SESSION['urole'] ) ) {
+            $student['role'] = $_SESSION['urole'];   
+        }
+        
+        return $student;
+    }
+
+    return [
+        'status'  => false,
+        'message' => 'An error occured while trying to retrieve Student records.',
         'code'    => 500,
     ];
 }

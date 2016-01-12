@@ -99,6 +99,10 @@ div.container div.content h1 {
     border-bottom: solid 1px #DCDCDC;
 }
 
+div.container div.content h2 {
+    margin: 10px 20px;
+}
+
 div.container div.content p {
     margin: 10px 20px;
 }
@@ -137,6 +141,15 @@ div.container div.content table tbody tr td a:hover {
     color: #d7ed11;
 }
 
+div.container div.content table tbody tr td.column-data {
+    background: #f7f7f7;
+}
+
+div.container div.content table tbody tr td.column-label {
+    width: 30%;
+    background: #e4e4e4;
+}
+
 /**
  *  Login
  **/
@@ -157,6 +170,16 @@ div.container div.content div.login-box div.header {
 div.container div.content div.login-box div.form-box {
     border: solid 1px #245701;
     border-top: none;
+    padding: 10px 0;
+}
+
+div.container div.content div.login-box div.form-box div.errors {    
+    border: solid 1px #D90606;
+    background: #F9D4D4;
+    color: #D90606;
+    margin: 0 10px;
+    padding: 5px;
+    text-align: center;
 }
 
 div.container div.content div.login-box div.form-box div.row {
@@ -188,4 +211,28 @@ div.container div.content div.login-box div.form-box div.row input[type='submit'
 div.container div.content div.login-box div.form-box div.row input[type='submit']:hover {
     cursor: pointer;
     background: #0b8053;
+}
+
+/**
+ *  Buttons
+ **/
+a.button {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;    
+    border-radius: 5px;
+    width: auto;
+}
+
+a.add {
+    color: #fff;
+    background: #245701;
+    border: solid 1px #245701;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+a.add:hover {
+    cursor: pointer;
+    color: #d7ed11;
 }

@@ -19,6 +19,7 @@ return [
             'invokables' => [
                 'home',
                 'login',
+                'logout',
                 'students',
                 'subjects',
             ],
@@ -38,13 +39,9 @@ return [
     ],
 
     'routes' => [
-        'catalog' => [
-            'index' => [
-                'type'
-            ],
-            'show' => [
-                'unit-type',
-                'location',
+        'students' => [
+            'view' => [
+                'student-number'
             ],
         ]
     ],

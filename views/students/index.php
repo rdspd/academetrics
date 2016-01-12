@@ -9,6 +9,11 @@
             <?php require 'views/shared/header.php'; ?>            
             <div class='content'>
                 <h1>Students</h1>
+                <?php if( isset( $role ) && 1 == $role ) : ?>
+                <a class='button add'>
+                    Add Student
+                </a>
+                <?php endif; ?>
                 <?php if( !empty( $students ) ) : ?>
                 <table>
                     <thead>
@@ -19,11 +24,11 @@
                         <?php foreach( $students as $student ) : ?>
                         <tr>
                             <td>
-                                <?php if( isset( $loggedIn ) && true === $loggedIn ) : ?>
+                                <?php if( isset( $loggedIn ) && true === $loggedIn && isset( $role ) && 1 == $role ) : ?>
                                 <a href='/students/view/<?php echo $student['StudentDetail']['StudentNumber']; ?>'>
                                 <?php endif; ?>
                                     <?php echo $student['StudentDetail']['StudentNumber']; ?>
-                                <?php if( isset( $loggedIn ) && true === $loggedIn ) : ?>
+                                <?php if( isset( $loggedIn ) && true === $loggedIn && isset( $role ) && 1 == $role ) : ?>
                                 </a>
                                 <?php endif; ?>                                
                             </td>

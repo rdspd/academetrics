@@ -11,9 +11,9 @@
     </li>
     <li class='right-aligned'>
     <?php if( isset( $_SESSION['uname'] ) ) : ?>
-        Hello, <?php echo $_SESSION['uname']; ?>. (<a href='/'>logout</a>)
+        Hello, <?php echo $_SESSION['uname']; ?>. (<a href='/logout'>logout</a>)
     <?php else : ?>
-    <?php endif; ?>    
-        <a href='/login'>login</a>
+    <a href='/login'>login</a>
+    <?php endif; ?>            
     </li>
 </ul>
