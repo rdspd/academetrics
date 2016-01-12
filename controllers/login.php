@@ -12,7 +12,7 @@ session_start();
 function index( $config, $parameters ) {
     if( 'POST' == getRequestMethod() ) {
         $username = isset( $_POST['username'] ) ? $_POST['username'] : null;
-        $password = isset( $_POST['password'] ) ? openssl_digest( $_POST['password'], 'sha512' ) : null;
+        $password = isset( $_POST['password'] ) ? sha1( $_POST['password'] ) : null;
 
         loadModel( 'models/Users' );
 

@@ -13,7 +13,7 @@
                     <div class='form-box'>
                         <?php if( isset( $invalid ) && $invalid ) : ?>
                         <div class='errors'>
-                            Username or password do not match.
+                            Username/password do not match.
                         </div>
                         <?php endif; ?>
                         <form method='POST'>

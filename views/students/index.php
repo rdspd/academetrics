@@ -10,7 +10,7 @@
             <div class='content'>
                 <h1>Students</h1>
                 <?php if( isset( $role ) && 1 == $role ) : ?>
-                <a class='button add'>
+                <a class='button add' href='/students/add'>
                     Add Student
                 </a>
                 <?php endif; ?>

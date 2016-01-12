@@ -22,6 +22,7 @@ return [
                 'logout',
                 'students',
                 'subjects',
+                'profile',
             ],
             'default' => [
                 'controller' => 'home',

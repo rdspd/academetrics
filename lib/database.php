@@ -39,11 +39,12 @@ function getConnection( $config )
     );
 
     $connection = new PDO( $connectionString, $userName, $password );
+    $connection->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
     if( $connection ) {
         return [
-            'status'  => true,
-            'message' => 'Connection successfully established.',
+            'status'     => true,
+            'message'    => 'Connection successfully established.',
             'connection' => $connection,
         ];
     }
@@ -51,7 +52,7 @@ function getConnection( $config )
     return [
         'status'  => false,
         'message' => 'Unable to establish database connection.',
-        'code' => 500,
+        'code'    => 500,
     ];
 }
 

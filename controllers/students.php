@@ -60,3 +60,25 @@ function view( $config, $parameters )
         'code'    => 500,
     ];
 }
+
+function add( $config, $parameters )
+{
+    loadModel( 'models/Subjects' );
+    loadModel( 'models/Students' );
+
+    $subjects = getAllSubjects( $config );
+
+    if( !$subjects['status'] ) {
+        $subjects['subjects'] = [];
+    }
+    
+    if( 'POST' == getRequestMethod() ) {
+        $result = addStudent( $config, $_POST );
+    }
+
+    return [
+        'status'   => true,
+        'message'  => 'An error occured while trying to retrieve Student records.',
+        'subjects' => $subjects['subjects'],
+    ];
+}
