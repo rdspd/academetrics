@@ -52,6 +52,9 @@
                     </tbody>
                 </table>
                 <h2>Subjects</h2>
+                <a class='button add' href='/profile/manage-subjects'>
+                    Manage Subjects
+                </a>
                 <?php if( isset( $student['Subjects'] ) && !empty( $student['Subjects'] ) ) :  ?>
                 <table>
                     <thead>

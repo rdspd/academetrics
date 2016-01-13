@@ -103,8 +103,33 @@ div.container div.content h2 {
     margin: 10px 20px;
 }
 
+div.container div.content h3 {
+    margin: 10px 20px;
+    padding: 10px;
+}
+
+div.container div.content h3.success-notification {
+    border: solid 1px #245701;
+    background: #BCF0A0;
+}
+
 div.container div.content p {
     margin: 10px 20px;
+}
+
+div.container div.content h1.error-heading {
+    margin: 50px auto;
+    text-align: center;
+    border: none;
+    font: 150px 'Open Sans Bold';
+    font-weight: bold;
+    text-shadow: 3px 3px 2px rgba(150, 150, 150, 0.9);
+}
+
+div.container div.content h2.error-message {
+    text-align: center;
+    font: 20px 'Open Sans Bold';
+    font-weight: bold;
 }
 
 div.container div.content table {
@@ -235,4 +260,96 @@ a.add {
 a.add:hover {
     cursor: pointer;
     color: #d7ed11;
+}
+
+div.container div.content form {
+    margin-bottom: 20px;
+}
+
+div.container div.content form div.form-segment {
+    margin: 10px 20px;
+    overflow: hidden;    
+}
+
+div.container div.content form div.form-segment h4 {
+    margin: 5px 0;
+}
+
+div.container div.content form div.form-segment label {
+    display: block;
+    float: left;
+    width: 15%;
+    padding: 10px;
+    text-align: right;
+    background: #eaeaea;
+}
+
+div.container div.content form div.form-segment input[type='text'],
+div.container div.content form div.form-segment input[type='password'] {
+    padding: 8px;
+    width: 80%;
+    border: solid 1px #D6D6D6;
+    font: 16px 'Open Sans';
+}
+
+div.container div.content form div.form-segment input[type='submit'] {
+    text-align: center;
+    padding: 5px 10px;
+    border: solid 1px #245701;
+    background: #245701;
+    color: #fff;
+}
+
+div.container div.content form div.form-segment input[type='submit']:hover {
+    color: #d7ed11;
+    cursor: pointer;
+}
+
+div.container div.content form div.form-segment ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+div.container div.content form div.form-segment ul li {
+    float: left;
+    margin: 10px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+div.container div.content form div.form-segment ul li.no-float {
+    float: none;
+    overflow: hidden;
+}
+
+div.container div.content form div.form-segment ul li input[type='checkbox'] {
+    opacity: 0;
+    width: 32px;
+    height: 32px;
+    z-index: 2;
+    float: left;
+}
+
+div.container div.content form div.form-segment ul li input[type='checkbox'] + label {
+    background: url( '/images/checkboxes/unchecked.png' ) no-repeat;
+    z-index: 1;
+    display: block;
+    float: left;
+    margin-left: -35px;
+    padding-left: 35px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    font: 16px 'Open Sans';
+}
+
+div.container div.content form div.form-segment ul li.no-float input[type='checkbox'] + label {
+    padding-left: 40px;
+    margin-left: -30px;
+    width: auto;
+}
+
+div.container div.content form div.form-segment ul li input[type='checkbox']:checked + label {
+    background: url( '/images/checkboxes/checked.png' ) no-repeat;
 }

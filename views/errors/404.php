@@ -1,21 +1,20 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo $metadata['baseTitle']; ?> | Error 404</title>
-        <link rel='stylesheet' href="/css/cobalt.css" />
+        <title><?php echo $metadata['baseTitle']; ?> | 404 Not Found</title>
+        <link rel='stylesheet' href='/css/natural/desktop.css' />
     </head>
     <body>
-        <?php require 'views/shared/header.php'; ?>
-        <div class='main-container'>
-            <div class='header-nav'></div>
-            <div class='error-page-container'>
-                <h2>404</h2>
-                <h3>Page Not Found</h3>
-                <p>
-                    The page you are trying to look for does not exist or it may have moved somewhere else.
-                    If you came around here by mistake, you can go back to the <a href="/">Home page</a> and continue from there.
-                </p>
+        <div class='container'>
+            <?php require 'views/shared/header.php'; ?>            
+            <div class='content'>
+                <h1 class='error-heading'>
+                    404
+                </h1>
+                <h2 class='error-message'>
+                    The page you are trying to look for does not exist or may have moved somewhere else.
+                </h2>
             </div>
         </div>
-        <?php require 'views/shared/footer.php'; ?>
     </body>
 </html>

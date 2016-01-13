@@ -10,47 +10,48 @@
             <div class='content'>
                 <h1>Add Student</h1>
                 <form method='POST'>
-                    <div>
+                    <div class='form-segment'>
                         <label for='UserName'>User Name</label>
                         <input type='text' name='UserName' />
                     </div>
-                    <div>
+                    <div class='form-segment'>
                         <label for='Password'>Password</label>
                         <input type='password' name='Password' />
                     </div>
-                    <div>
+                    <div class='form-segment'>
                         <label for='FirstName'>First Name</label>
                         <input type='text' name='FirstName' />
                     </div>
-                    <div>
+                    <div class='form-segment'>
                         <label for='MiddleName'>Middle Name</label>
                         <input type='text' name='MiddleName' />
                     </div>
-                    <div>
+                    <div class='form-segment'>
                         <label for='LastName'>Last Name</label>
                         <input type='text' name='LastName' />
                     </div>
-                    <div>
+                    <div class='form-segment'>
                         <label for='Email'>E-mail</label>
                         <input type='text' name='Email' />
                     </div>
-                    <div>
+                    <div class='form-segment'>
                         <label for='Address'>Address</label>
                         <input type='text' name='Address' />
                     </div>
                     <?php if( !empty( $subjects ) ) : ?>
-                    <div>                        
-                    <?php foreach( $subjects as $subject ) : ?>
-                    <ul>
-                        <li>
-                            <input type='checkbox' value='<?php echo $subject['ID']; ?>' name='Subjects[]' />
-                            <?php echo $subject['Name']; ?>
-                        </li>
-                    </ul>                    
-                    <?php endforeach; ?>
+                    <div class='form-segment'>
+                        <h4>Subjects</h4>
+                        <ul>
+                        <?php foreach( $subjects as $subject ) : ?>                    
+                            <li>
+                                <input type='checkbox' value='<?php echo $subject['ID']; ?>' name='Subjects[]' />
+                                <label><?php echo $subject['Name']; ?></label>
+                            </li>                    
+                        <?php endforeach; ?>
+                        </ul>
                     </div>
                     <?php endif; ?>
-                    <div>
+                    <div class='form-segment' align='right'>
                         <input type='submit' value='Add Student' />
                     </div>
                 </form>

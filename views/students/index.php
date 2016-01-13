@@ -9,6 +9,11 @@
             <?php require 'views/shared/header.php'; ?>            
             <div class='content'>
                 <h1>Students</h1>
+                <?php if( isset( $addStatus ) && true == $addStatus ) : ?>
+                    <?php if( isset( $addStatusMessage ) && !empty( $addStatusMessage ) ) : ?>
+                    <h3 class='success-notification'><?php echo $addStatusMessage; ?></h3>
+                    <?php endif; ?>
+                <?php endif; ?>
                 <?php if( isset( $role ) && 1 == $role ) : ?>
                 <a class='button add' href='/students/add'>
                     Add Student

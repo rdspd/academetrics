@@ -24,6 +24,18 @@ function index( $config, $parameters )
             $students['role'] = $_SESSION['urole'];   
         }
         
+        if( isset( $_SESSION['addStatus'] ) ) {
+            $students['addStatus'] = $_SESSION['addStatus'];
+            $_SESSION['addStatus'] = null;
+            unset( $_SESSION['addStatus'] );
+        }
+
+        if( isset( $_SESSION['addStatusMessage'] ) ) {
+            $students['addStatusMessage'] = $_SESSION['addStatusMessage'];
+            $_SESSION['addStatusMessage'] = null;
+            unset( $_SESSION['addStatusMessage'] );
+        }        
+        
         return $students;
     }
 
@@ -74,6 +86,11 @@ function add( $config, $parameters )
     
     if( 'POST' == getRequestMethod() ) {
         $result = addStudent( $config, $_POST );
+
+        $_SESSION['addStatus'] = $result['status'];
+        $_SESSION['addStatusMessage'] = $result['message'];
+
+        header( 'Location: /students' );
     }
 
     return [

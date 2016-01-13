@@ -436,4 +436,60 @@ function addStudent( $config, $post )
 
     $connection->commit();
     closeConnection( $connection );
+
+    return [
+        'status'  => true,
+        'message' => 'Student successfully added.',
+    ];
+}
+
+function addSubjectsToStudent( $config, $post )
+{
+    $student = getStudentByStudentUserName( $config, $post['UserName'] );
+    
+    if( !$student['status'] ) {
+        return $student;
+    }
+
+    $connection = getConnection( $config );
+
+    if( false === $connection['status'] ) {
+        return $connection;
+    }
+
+    $connection = $connection['connection'];
+
+    try {
+        if( isset( $post['Subjects'] ) && !empty( $post['Subjects'] ) && is_array( $post['Subjects'] ) ) {
+            foreach( $post['Subjects'] as $subjectItem ) {
+                $query = sprintf(
+                    '
+                    INSERT INTO `StudentsSubjectsMatch` ( `UserID`, `SubjectID` )
+                    VALUES ( :UserID, :SubjectID )
+                    '
+                );
+
+                $preparedStatement = $connection->prepare( $query );
+                $preparedStatement->bindValue( ':UserID', $student['student']['ID'], PDO::PARAM_INT );
+                $preparedStatement->bindValue( ':SubjectID', $subjectItem, PDO::PARAM_INT );
+                $result = $preparedStatement->execute();
+            }
+        }
+
+        closeConnection( $connection );
+
+        return [
+            'status'  => true,
+            'message' => 'Subjects successfully added to Student.',
+        ];
+    }
+    catch( Exception $e ) {
+        closeConnection( $connection );
+
+        return [
+            'status'  => false,
+            'message' => $e->getMessage(),
+            'code'    => 500,
+        ];
+    }
 }

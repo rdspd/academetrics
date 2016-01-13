@@ -9,6 +9,7 @@
             <?php require 'views/shared/header.php'; ?>            
             <div class='content'>
                 <h1>Academetrics</h1>
+                <h3>Changelog!</h3>
             </div>
         </div>
     </body>

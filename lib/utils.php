@@ -15,3 +15,21 @@
         exit;
     }
  }
+
+ function normalizeAction( $action )
+ {
+    if( !is_string( $action ) ) {
+        return '';
+    }
+
+    if( false !== strpos( $action, '-' ) ) {
+        $tokens = explode( '-', $action );
+        $first = array_shift( $tokens );        
+        array_walk( $tokens, function( &$tokens ) {
+            $tokens = ucfirst( $tokens );
+        });                
+        return implode( '', array_merge( [ $first ], $tokens ) );
+    }
+
+    return $action;
+ }

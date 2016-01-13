@@ -120,7 +120,8 @@ function dispatch( $config )
 
     require $controllerFile;
 
-    if( !function_exists( $action ) ) {
+    $controllerAction = normalizeAction( $action );
+    if( !function_exists( $controllerAction ) ) {
         return render(
             $config,
             'views/errors/404.php',
@@ -130,7 +131,7 @@ function dispatch( $config )
         );
     }
 
-    $result = $action( $config, $routeParameters );
+    $result = $controllerAction( $config, $routeParameters );
 
     if( false === $result['status'] ) {
         return render(
@@ -145,7 +146,7 @@ function dispatch( $config )
     /**
      *  View directory should be in structure: views/<controller-name>/<action-name>.php
      **/
-    $viewFile = 'views' . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.php';
+    $viewFile = 'views' . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.php';    
     
     unset( $result['status'], $result['message'] );
 

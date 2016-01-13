@@ -14,5 +14,10 @@ function index( $config, $parameters ) {
         $_SESSION['uname'] = null;
         unset( $_SESSION['uname'] );        
     }
-    header( 'Location: /home' );
+
+    if( isset( $_SESSION['urole'] ) ) {
+        $_SESSION['urole'] = null;
+        unset( $_SESSION['urole'] );        
+    }
+    header( 'Location: /' );
 }

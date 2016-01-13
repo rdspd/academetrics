@@ -49,9 +49,9 @@ function checkLogin( $config, $username, $password )
         
         if( !empty( $record ) ) {
             $record = [
-                'ID' => $record['ID'],
-                'UserName' => $record['UserName'],
-                'DateAdded' => $record['DateAdded'],
+                'ID'           => $record['ID'],
+                'UserName'     => $record['UserName'],
+                'DateAdded'    => $record['DateAdded'],
                 'DateModified' => $record['DateModified'],
                 'UserRole' => [
                     'ID'           => $record['UserRoleID'],
