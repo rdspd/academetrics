@@ -93,7 +93,7 @@ function getSubjectsNotTakenByStudent( $config, $studentID )
             WHERE 
             `Subjects`.`ID` NOT IN (
                 SELECT `SubjectID` FROM `StudentsSubjectsMatch`
-                WHERE `StudentsSubjectsMatch`.`UserID` = 2
+                WHERE `StudentsSubjectsMatch`.`UserID` = :ID
             )
             GROUP BY `Subjects`.`ID`
             ORDER BY `Subjects`.`ID`
